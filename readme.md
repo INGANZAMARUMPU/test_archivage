@@ -1,7 +1,7 @@
 Ntanguranye ivya easyOCR
 
-igituma nanse mpevye easyOCR
-----------------------------
+igituma mpevye easyOCR
+----------------------
 
 - iraremereye mu kwinstalla (hafi 3GB ukoresheje pip)
 - irikwega mu guscanna

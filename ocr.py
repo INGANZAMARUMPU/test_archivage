@@ -23,8 +23,8 @@ if not kind.mime in accepted_mine:
 image_path:Path = None
 
 if(kind.mime == "application/pdf"):
-    image_path = fichier.parent
-    result = pdf2jpg.convert_pdf2jpg(fichier, image_path, pages="ALL")
+    result = pdf2jpg.convert_pdf2jpg(fichier, fichier.parent, pages="ALL")
+    image_path = fichier.parent / (str(fichier.stem)+".pdf_dir/")
 else:
     new_path:Path = fichier.parent / (str(fichier.stem)+".pdf_dir/")
     if not new_path.exists:
@@ -34,7 +34,7 @@ else:
 
 for item in image_path.iterdir():
     print(item)
-    print("_"*len(str(item)))
+    print("="*len(str(item)))
     content = subprocess.check_output([
         f"./tesseract", "-l", "fra", item, "stdout"
     ]).decode()
